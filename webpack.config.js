@@ -15,6 +15,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.vue', '.json'],
 	},
+	devtool: 'cheap-module-source-map',
 	module: {
 		rules: [
 			{
@@ -31,6 +32,20 @@ module.exports = {
 				use: {
 					loader: "babel-loader"
 				}
+			},
+			{
+				test: /\.sass$/,
+				use: [
+					'vue-style-loader',
+					'css-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							indentedSyntax: true,
+							includePaths: ['src/sass']
+						}
+					}
+				]
 			},
 			{
 				test: /\.css$/,

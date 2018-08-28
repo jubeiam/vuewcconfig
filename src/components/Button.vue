@@ -34,10 +34,12 @@ export default {
 }
 </script>
 
-<style scoped>
-button {
-	background: #fafafa;
-}
+<style scoped lang="sass">
+@import 'variables'
+
+button
+	background: $white
+
 </style>
 
 
